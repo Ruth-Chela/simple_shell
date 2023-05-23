@@ -19,7 +19,7 @@ size_t list_len(const list_t *h)
 }
 
 /**
- * list_to_strings - Generates a string array containing the elements of the list->str
+ * list_to_strings - generates a str array with the elements of the list->str
  * @head: pointer is reference to the initial node
  *
  * Return: array of strings
@@ -79,7 +79,7 @@ size_t print_list(const list_t *h)
 }
 
 /**
- * node_starts_with - provides the node whose string commences with the given prefix
+ * node_starts_with - gives node whose string starts with the given prefix
  * @node: pointer to list head
  * @prefix: string that match
  * @c: the succeeding character to be matched after the prefix

@@ -32,7 +32,7 @@ int _erratoi(char *s)
  * print_error - outputs an error message
  * @info: the info struct passed as a para and returned by the func.
  * @estr: str with specified error type
- * Return: 0 if there are no numbers in the string; otherwise, converted numbers
+ * Return: 0 if no numbers in the string; otherwise, converted numbers
  *        -1 on error
  */
 void print_error(info_t *info, char *estr)
@@ -122,7 +122,7 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments - the function replaces the first occurrence of '#' with '\0'
+ * remove_comments - the function replace the first occurrence of '#' with '\0'
  * @buf: the memory address of the string to be modified
  *
  * Return: Always 0;
