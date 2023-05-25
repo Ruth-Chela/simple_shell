@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * input_buf - buffers a series of chained commands
- * @info: parameter structure
- * @buf: mem address of buffer
- * @len: mem address of length variable
+ * input_buf - buffers sequenced commands
+ * @info: para structure
+ * @buf: address of the buffer
+ * @len: address of the len variable
  *
- * Return: bytes that were read
+ * Return: bytes that are read
  */
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
@@ -45,11 +45,11 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * get_input - obtains a line with no newline
+ * get_input - gets a line without the newline
  * @info: parameter structure
  *
- * Return: bytes read
- * /
+ * Return: bytes that are read
+ */
 ssize_t get_input(info_t *info)
 {
 	static char *buf; /* the ';' command chain buffer */
@@ -90,7 +90,7 @@ ssize_t get_input(info_t *info)
 }
 
 /**
- * read_buf - reads a buffer
+ * read_buf - processes a buffer
  * @info: parameter structure
  * @buf: buffer
  * @i: size
@@ -112,8 +112,8 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 /**
  * _getline - retrieves the subsequent line of input from STDIN
  * @info: parameter structure
- * @ptr: address of pointer to buffer, preallocated or NULL
- * @length: size of preallocated ptr buffer if not NULL
+ * @ptr: address of pointer to buffer, preallocated or set to NULL
+ * @length: size of preallocated ptr buffer if its not set to NULL
  *
  * Return: s
  */
@@ -121,10 +121,9 @@ int _getline(info_t *info, char **ptr, size_t *length)
 {
 	static char buf[READ_BUF_SIZE];
 	static size_t i, len;
-	size_t local_k;
-	ssize_t local_r = 0, local_s = 0;
-	char *local_p = NULL, *local_new_p = NULL;
-	char *local_c;
+	size_t k;
+	ssize_t r = 0, s = 0;
+	char *p = NULL, *new_p = NULL, *c;
 
 	p = *ptr;
 	if (p && length)
@@ -159,7 +158,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 
 /**
  * sigintHandler - blocks ctrl-C
- * @sig_num: the signal number
+ * @sig_num: the number of the signal
  *
  * Return: void
  */
